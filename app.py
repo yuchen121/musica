@@ -158,8 +158,8 @@ def handle_message(event):
     elif user_message.find('圖片訊息') != -1 :         #判斷用戶使否傳來"圖片訊息"關鍵字，若為是則觸發本區段。  
         
         res_message = ImageSendMessage(
-            original_content_url='https://photo.xuite.net/aralei/19727959/17.jpg/',
-            preview_image_url='https://photo.xuite.net/aralei/19727959/17.jpg/'
+            original_content_url='https://photo.xuite.net/aralei/19727959/18.jpg',
+            preview_image_url='https://photo.xuite.net/aralei/19727959/18.jpg'
         )
         line_bot_api.reply_message(event.reply_token,res_message)
         return 0  
