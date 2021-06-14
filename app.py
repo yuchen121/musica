@@ -16,11 +16,11 @@ import random
 app = Flask(__name__)
 
 
-line_bot_api = LineBotApi('')
+line_bot_api = LineBotApi('4fU7ktJH1NHOtpdFNe6fJSi4eHDB+PG8P8pjEygCyBGHszrw45SJB55yv0pDErUZStTsEbJCstmkYp+WKcCUAl2ZH6tXbhdU+tTcSz8BoFTaOMKWYe1O2pREScPF8LhgKln7aWbhBifCY3gHKacFjQdB04t89/1O/w1cDnyilFU=')
 
-handler = WebhookHandler('')
+handler = WebhookHandler('f6ac8ae7f09f4d0dab4acdaded51a15e')
 
-line_bot_api.push_message('', TextSendMessage(text='系統測試中，若您覺得訊息干擾到您，您可以將聊天室設為靜音，謝謝喔！'))
+line_bot_api.push_message('U2e5762080da8bd1450acf194146a20db', TextSendMessage(text='系統測試中，若您覺得訊息干擾到您，您可以將聊天室設為靜音，謝謝喔！'))
 
 @app.route("/callback", methods=['POST'])
 def callback():
@@ -150,7 +150,7 @@ def handle_message(event):
         #user_message='文字訊息'
     elif user_message.find('文字訊息') != -1:         #判斷用戶使否傳來"文字訊息"關鍵字，若為是則觸發本區段。   
         
-        res_message = TextSendMessage(text='歡迎使用文藻E點通，您選擇的是文字測試訊息，您目前看到的是【文字訊息】的回覆方式。')        
+        res_message = TextSendMessage(text='歡迎使用音樂助理，您選擇的是文字測試訊息，您目前看到的是【文字訊息】的回覆方式。')        
         line_bot_api.reply_message(event.reply_token,res_message)
         return 0   
         
@@ -158,8 +158,8 @@ def handle_message(event):
     elif user_message.find('圖片訊息') != -1 :         #判斷用戶使否傳來"圖片訊息"關鍵字，若為是則觸發本區段。  
         
         res_message = ImageSendMessage(
-            original_content_url='https://cdn2.ettoday.net/images/3053/3053944.jpg',
-            preview_image_url='https://cdn2.ettoday.net/images/3053/3053944.jpg'
+            original_content_url='https://photo.xuite.net/aralei/19727959/17.jpg/',
+            preview_image_url='https://photo.xuite.net/aralei/19727959/17.jpg/'
         )
         line_bot_api.reply_message(event.reply_token,res_message)
         return 0  
